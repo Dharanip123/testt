@@ -75,11 +75,12 @@ Content-Type: application/json
 }
 
 ###Get the data 
-http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/acb74422-ada6-4f7c-95fa-45c5d431ef52
+http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/adccee8a-56ae-4212-a7ad-3bfeb800911c
 
 ###UPDATE an employee by keeping the nameFirst and loginName intact.
 
-PATCH http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/92399fb4-920e-4bea-9dc3-c50e5f492a59
+PATCH http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/adccee8a-56ae-4212-a7ad-3bfeb800911c
+Content-Type: application/json
 
 {
     
@@ -88,7 +89,7 @@ PATCH http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/92399fb4-920e-4
 }
 
 ###UPDATE an employee by changing the loginName.
-PATCH http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/acb74422-ada6-4f7c-95fa-45c5d431ef52
+PATCH http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/adccee8a-56ae-4212-a7ad-3bfeb800911c
 Content-Type: application/json
 
 {
@@ -97,10 +98,10 @@ Content-Type: application/json
 }
 
 ###DELETE any employee.
-DELETE http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/3ae86fd4-ad92-49c3-b1d8-3abfc0b1039a
+DELETE http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/adccee8a-56ae-4212-a7ad-3bfeb800911c
 
 ###DELETE an employee whose nameFirst starts with ‘S’.
-DELETE http://localhost:4004/odata/v4/EmployeeServices/employees?$filter=startswith(nameFirst,'S')
+DELETE http://localhost:4004/odata/v4/EmployeeServices/employees/02BD2137-0890-1EEA-A6C2-BB55C19787FB
 
 
 
