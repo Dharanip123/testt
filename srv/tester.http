@@ -1,0 +1,106 @@
+###Get the Service document.
+http://localhost:4004/odata/v4/EmployeeService
+
+###Get the Service metadata document.
+http://localhost:4004/odata/v4/EmployeeService/$metadata
+
+###Get all the Employees data.
+http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
+
+###Get all the Employees whose name starts with ‘S’.
+http://localhost:4004/odata/v4/EmployeeService/EmployeeSet?$filter=contains(nameFirst,'S')
+
+###CREATE an employee with salary <50000 & currency code USD.
+POST http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
+Content-Type: application/json
+
+{
+  "nameFirst": "DharaniI",
+  "nameMiddle": null,
+  "nameLast": "penta",
+  "nameInitials": null,
+  "sex": "F",
+  "language": "E",
+  "phoneNumber": "+917815855107",
+  "email": "dharani.p@gmail.com",
+  "loginName": "SPRINGS",
+  "Currency_code": "USD",
+  "salaryAmount": 49999,
+  "accountNumber": "111222333",
+  "bankId": "511000655",
+  "bankName": "My Bank of Antioch"
+}
+
+
+###CREATE an employee with salary >50000 & currency code USD.
+POST http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
+Content-Type: application/json
+
+{
+  "nameFirst": "Sailaja",
+  "nameMiddle": null,
+  "nameLast": "penta",
+  "nameInitials": null,
+  "sex": "F",
+  "language": "E",
+  "phoneNumber": "+917995578078",
+  "email": "dharani.p@gmail.com",
+  "loginName": "SPRINGS",
+  "Currency_code": "USD",
+  "salaryAmount": 59999,
+  "accountNumber": "111222333",
+  "bankId": "511000655",
+  "bankName": "My Bank of Antioch"
+}
+
+###CREATE an employee with salary <50000 & currency code EUR.
+POST http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
+Content-Type: application/json
+
+{
+  "nameFirst": "Sailaj",
+  "nameMiddle": null,
+  "nameLast": "penta",
+  "nameInitials": null,
+  "sex": "F",
+  "language": "E",
+  "phoneNumber": "+917995578078",
+  "email": "dharani.p@gmail.com",
+  "loginName": "SPRINGS",
+  "Currency_code": "EUR",
+  "salaryAmount": 49999,
+  "accountNumber": "111222333",
+  "bankId": "511000655",
+  "bankName": "My Bank of Antioch"
+}
+
+###Get the data 
+http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/acb74422-ada6-4f7c-95fa-45c5d431ef52
+
+###UPDATE an employee by keeping the nameFirst and loginName intact.
+
+PATCH http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/92399fb4-920e-4bea-9dc3-c50e5f492a59
+
+{
+    
+  "salaryAmount": 40000,
+  "Currency_code": "USD"
+}
+
+###UPDATE an employee by changing the loginName.
+PATCH http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/acb74422-ada6-4f7c-95fa-45c5d431ef52
+Content-Type: application/json
+
+{
+   "loginName": "newloginname"
+ 
+}
+
+###DELETE any employee.
+DELETE http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/3ae86fd4-ad92-49c3-b1d8-3abfc0b1039a
+
+###DELETE an employee whose nameFirst starts with ‘S’.
+DELETE http://localhost:4004/odata/v4/EmployeeServices/employees?$filter=startswith(nameFirst,'S')
+
+
+
